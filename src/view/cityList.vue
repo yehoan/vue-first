@@ -5,6 +5,7 @@
 </template>
 <script type="text/ecmascript-6">
   import  api  from '../api/index'
+   import axios from 'axios'
 
  export  default{
      data(){
@@ -12,9 +13,8 @@
             info:[],
          }
      },
-     created(){
 
-     }
+
  }
 </script>
 <style lang="less" scoped>

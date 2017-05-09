@@ -11,7 +11,7 @@ const routes=[
     name:'home',
     component:require('../view/index.vue')
 },{
-   path:'/film/:id',
+   path:'/film',
    name:'film',
    component:require('../view/film.vue')
 
@@ -28,15 +28,16 @@ const routes=[
   name:'name',
   component:require('../view/my.vue')
 },{
-  path:'sellCard',
+  path:'/sellCard',
   name:'sellCard',
   component:require('../view/sellCard.vue')
 },
   {
-    path:'cityList',
+    path:'/cityList',
     name:'cityList',
     component:require('../view/cityList.vue')
-  }
+  },
+
 ]
 const router=new VueRouter({
   mode:'history',

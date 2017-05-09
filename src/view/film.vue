@@ -5,9 +5,15 @@
      <input type="text" value="即将热映" class="comeStating" :class="{on:!addOn}" @click="toogleinfo">
    </div>
     <div class="content_hotPlay" v-show="addOn">
+
+
       <div v-for="item in nowList">
+        <router-link :to="{path:'sellCard',query:{cont:item.id}}" @click="getID">
         <img :src="item.cover.origin" alt="">
+        <h1>{{item.id}}</h1>
+        </router-link>
       </div>
+
     </div>
     <div class="content_comeSoon" v-show="!addOn">
       <div v-for="item in comingList">
@@ -31,6 +37,9 @@
      toogleinfo(){
        this.addOn=!this.addOn;
        this.addClose=!this.addClose;
+     },
+     getID(){
+
      },
      getMore:function (el) {
        if(document.body.scrollTop+window.innerHeight>=el.clientHeight-100){
