@@ -15,7 +15,7 @@
 
       <div class="routerList" :class="{show:showMenu}" @click="showInfo">
         <router-link to="/">首页 <i class="router_right">&#xe60e;</i></router-link>
-        <router-link to="/film">影片 <i class="router_right">&#xe60e;</i></router-link>
+        <router-link to="/film/:type">影片 <i class="router_right">&#xe60e;</i></router-link>
         <router-link to="/movieCenter">影院 <i class="router_right">&#xe60e;</i></router-link>
         <router-link to="/seller">商城 <i class="router_right">&#xe60e;</i></router-link>
         <router-link to="/my">我的 <i class="router_right">&#xe60e;</i></router-link>

@@ -11,7 +11,7 @@ const routes=[
     name:'home',
     component:require('../view/index.vue')
 },{
-   path:'/film',
+   path:'/film/:type',
    name:'film',
    component:require('../view/film.vue')
 

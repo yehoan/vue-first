@@ -1,3 +1,4 @@
+<script src="../router/index.js"></script>
 <template>
  <div class="box" v-scroll="getMore">
    <div class="navba">
@@ -8,16 +9,16 @@
 
 
       <div v-for="item in nowList">
-        <router-link :to="{path:'sellCard',query:{cont:item.id}}" @click="getID">
-        <img :src="item.cover.origin" alt="">
-        <h1>{{item.id}}</h1>
+        <router-link :to="{path:'/sellCard',query:{cont:item.id}}">
+        <img :src="item.cover.origin" alt="" style="width: 100%;height: 100%">
+
         </router-link>
       </div>
 
     </div>
     <div class="content_comeSoon" v-show="!addOn">
       <div v-for="item in comingList">
-        <img :src="item.cover.origin" alt="">
+        <img :src="item.cover.origin" alt="" style="width: 100%;height: 100%">
       </div>
     </div>
  </div>
@@ -38,9 +39,7 @@
        this.addOn=!this.addOn;
        this.addClose=!this.addClose;
      },
-     getID(){
 
-     },
      getMore:function (el) {
        if(document.body.scrollTop+window.innerHeight>=el.clientHeight-100){
          if(this.addOn){

@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="more-button">
-        <span><router-link to="/film/more">更多热映电影</router-link></span>
+        <span><router-link :to="{name:'film',params:{type:'now-playing'}}">更多热映电影</router-link></span>
       </div>
       <div class="movie-item">
         <div v-for="info in coming" class="movie-item-list">
@@ -34,7 +34,8 @@
           </div>
         </div>
         <div class="more-button">
-          <span><router-link to="/film">更多即将上映电影</router-link></span>
+
+          <span><router-link :to="{name:'film',params:{type:'coming-soon'}}">更多即将上映电影</router-link></span>
         </div>
       </div>
     </div>
