@@ -3,7 +3,7 @@
     <div>
       <img :src="infoList" alt="" style="width: 100%;height: 100%">
     </div>
-
+      这是销售卡片的人
      <div class="btn">
         <span>立即购票</span>
       </div>
