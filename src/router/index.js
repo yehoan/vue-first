@@ -37,6 +37,11 @@ const routes=[
     name:'cityList',
     component:require('../view/cityList.vue')
   },
+  {
+    path:'/personal',
+    name: 'personal',
+    component: require('../view/personal.vue')
+  }
 
 ]
 const router=new VueRouter({
