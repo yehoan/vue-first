@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <comom></comom>
-
+  <div id="app">
+    <router-view />
   </div>
 
 </template>
 
 <script>
-import comom from './components/common.vue'
-
 export default {
-  components:{
-    comom
-  }
+  data(){
+    return{
 
-
+    }
+  },
 }
 </script>
 

@@ -2,46 +2,52 @@
  * Created by Administrator on 2017/4/11.
  */
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter);
+import Router from 'vue-router'
+import Layout from '../layout/index'
+Vue.use(Router);
 
-const routes=[
+export const constantRouterMap = [
   {
-    path:"/",
-    name:'home',
-    component:require('../view/index.vue')
-},{
-   path:'/film/:type',
-   name:'film',
-   component:require('../view/film.vue')
-
-},{
-  path:'/movieCenter',
-  name:'movieCenter',
-  component:require("../view/movieCenter.vue")
-},{
-   path:'/seller',
-   name:'seller',
-   component:require('../view/seller.vue')
-},{
-  path:'/my',
-  name:'name',
-  component:require('../view/my.vue')
-},{
-  path:'/sellCard',
-  name:'sellCard',
-  component:require('../view/sellCard.vue')
-},
-  {
-    path:'/cityList',
-    name:'cityList',
-    component:require('../view/cityList.vue')
+    path: '/login',
+    meta: {title: '登录', noCache: true},
+    component: ()=> import('@/view/login'),
   },
-
+  {
+    path: '/404',
+    component: ()=> import('@/view/features/404'),
+    hidden: true,
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/view/home'),
+        name: 'Dashboard',
+        meta: { title: '首页', icon: 'index', affix: true, noCache: true }
+      }
+    ]
+  },
+  // {
+  //   path: '/user',
+  //   component: Layout,
+  //   hidden: true,
+  //   redirect: 'noredict',
+  //   children:[
+  //     {
+  //       path: 'center',
+  //       component: ()=> import('@/view/system/user/center'),
+  //       name: '个人中心',
+  //       meta: {title: '个人中心'}
+  //     }
+  //   ]
+  // }
 ]
-const router=new VueRouter({
-  mode:'history',
-  routes:routes,
-  history:true,
+
+export default new Router({
+  mode: 'history',
+  routes: constantRouterMap,
 })
-export default router;
+

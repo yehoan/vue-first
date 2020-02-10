@@ -23,16 +23,11 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 3889,
+    port: 3880,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/v4/api/':{
-        target:'http://m.maizuo.com/',
-        changeOrigin:true,
-      },
-
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

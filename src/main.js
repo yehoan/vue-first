@@ -20,12 +20,10 @@ Vue.directive('scroll',{
     })
   }
 })
-
- new Vue({
+new Vue({
+  el: '#app',
   router,
   store,
-  template:'<App/>',
+  render: h => h(App)
+})
 
-  components:{App},
-
-}).$mount('#app');
