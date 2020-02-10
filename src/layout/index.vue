@@ -1,11 +1,12 @@
 <template>
   <div>
       <ul>
-        <li v-for="(list,index) in routerView" :key="index"></li>
+        <li v-for="(list,index) in routerValue" :key="index">{{list.name}}</li>
       </ul>
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
     data(){
         return{
@@ -13,7 +14,9 @@ export default {
         }
     },
     computed:{
-      routerView: state => state.home.routerValue
+      ...mapState({
+         routerValue: state => state.home.routerValue
+      })
     },
     mounted(){
       this.getValue()

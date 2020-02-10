@@ -7,6 +7,7 @@ const state = {
 const mutations = {
   [types.GET_ROUTE_VALUE_ARR_MUTATION] (state, res) {
     state.routerValue = res
+    console.log(state.routerValue, '暗示健康的123')
   }
 }
 
