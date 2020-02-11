@@ -4,6 +4,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '../layout/index'
+import store from '../vuex';
 Vue.use(Router);
 
 export const constantRouterMap = [
@@ -45,6 +46,12 @@ export const constantRouterMap = [
   //   ]
   // }
 ]
+store.dispatch('getRouteValueArr.action').then(res=>{
+  console.log(res.data, '能否')
+  constantRouterMap.addRoutes(res.data)
+  console.log(constantRouterMap, '奥斯卡觉得12')
+})
+
 
 export default new Router({
   mode: 'history',

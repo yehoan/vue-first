@@ -14,9 +14,16 @@ const mutations = {
 
 const actions = {
   [types.GET_ROUTE_VALUE_ARR_ACTION]: ({commit}, params) =>{
-    axios.get('/static/index.json').then(res=>{
-      commit(types.GET_ROUTE_VALUE_ARR_MUTATION, res.data)
+    return new Promise ((resolve, reject)=>{
+      axios.get('/static/index.json').then(res=>{
+        commit(types.GET_ROUTE_VALUE_ARR_MUTATION, res.data)
+        resolve(res)
+      }).catch(res =>{
+        console.log(res, '的时间里123')
+        reject(res)
+      })
     })
+
   }
 }
 

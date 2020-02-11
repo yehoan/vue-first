@@ -5,7 +5,7 @@ import App from './App'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from './vuex/index'
 
-import router from './router/index'
+import router from './router/routers'
 
 Vue.use(VueAwesomeSwiper);
 

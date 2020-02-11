@@ -23,7 +23,9 @@ export default {
     },
     methods:{
       getValue(){
-        this.$store.dispatch('getRouteValueArr.action')
+        this.$store.dispatch('getRouteValueArr.action').then(res=>{
+
+        })
       }
     }
 }
